@@ -5,7 +5,7 @@ int is_number_prime(int number) {
         return 0;
     }
     int i = 2;
-    while (i*i <= abs(number)) {
+    while (i*i <= number) {
         if (number % i == 0) {
             return 0;
         }
