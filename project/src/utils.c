@@ -10,7 +10,7 @@ size_t timer_from(int from) {
     if (from < 0) {
         return counter;
     }
-    printf("0\n");
+    puts("0");
     return counter + 1;
 }
 

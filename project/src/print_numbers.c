@@ -3,7 +3,7 @@
 
 void print_numbers(int number) {
     if (number == 1) {
-        printf("1");
+        putchar('1');
     } else {
         if (number > 0) {
         print_numbers(number - 1);
