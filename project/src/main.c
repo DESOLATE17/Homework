@@ -3,8 +3,8 @@
 #include "write_data.h"
 #include "test.h"
 #define filename_for_transfer "transaction.dat"
-#define filename_for_client_inf "client.dat"
-#define filename_for_updated_inf "updated.dat"
+#define filename_for_client_inf "record.dat"
+#define filename_for_updated_inf "blackrecord.dat"
 
 int main(void) {
     int choice = 0;
