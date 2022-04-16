@@ -30,9 +30,9 @@ Matrix* sub(const Matrix* l, const Matrix* r);
 Matrix* mul(const Matrix* l, const Matrix* r);
 
 // Extra operations
-int det(const Matrix* matrix, double* val);
-Matrix* adj(const Matrix* matrix);
-Matrix* inv(const Matrix* matrix);
+// int det(const Matrix* matrix, double* val);
+// Matrix* adj(const Matrix* matrix);
+// Matrix* inv(const Matrix* matrix);
 
 
 #endif  // PROJECT_INCLUDE_MATRIX_H_

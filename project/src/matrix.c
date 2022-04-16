@@ -96,7 +96,7 @@ int get_cols(const Matrix* matrix, size_t* cols) {
     if (matrix == NULL || cols == NULL) {
         return 1;
     }
-    *cols = matrix->rows;
+    *cols = matrix->cols;
     return 0;
 }
 
@@ -169,8 +169,9 @@ Matrix* sub(const Matrix* l, const Matrix* r) {
         puts("wrong parameters");
         return NULL;
     }
-    mul_scalar(r, -1);
-    Matrix * result = sum(l, r);
+    Matrix * new_r = mul_scalar(r, -1);
+    Matrix * result = sum(l, new_r);
+    free_matrix(new_r);
     return result;
 }
 
@@ -194,7 +195,7 @@ Matrix* mul(const Matrix* l, const Matrix* r) {
 }
 
 // Extra operations
-int det(const Matrix* matrix, double* val);
-Matrix* adj(const Matrix* matrix);
-Matrix* inv(const Matrix* matrix);
+// int det(const Matrix* matrix, double* val);
+// Matrix* adj(const Matrix* matrix);
+// Matrix* inv(const Matrix* matrix);
 
