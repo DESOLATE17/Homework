@@ -34,6 +34,7 @@ int main(int argc, const char **argv) {
             }
         }
         parse(letter);
+        free(letter);
     }
 
     return 0;

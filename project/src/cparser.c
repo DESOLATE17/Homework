@@ -189,7 +189,7 @@ static lexem_t get_complex_lex(const char *s, const char **end, lexem_t previous
                 if (!check_special_characters(&s)){
                     return L_ERR;
                 }
-                printf("%c", *s);
+                //printf("%c", *s);
                 ++s;
             }
             
@@ -240,14 +240,14 @@ bool parse(const char*s) {
     }
     const char *end;
     state_t state = S_NAMEBEGIN;
-    char ** str = malloc(4*sizeof(char*));
+    char ** str = (char**)malloc(4*sizeof(char*));
     lexem_t previous_lexem = L_EMPTY;
     bool multipart = false;
     size_t parts = 0;
+    int flag = -1;
     if (str == NULL) {
         puts("Error");
     } else {
-        int flag = -1;
         while (*s && state != S_HEND) {
             lexem_t lexem = get_lexem(s, &end, previous_lexem, state);
             if (lexem == L_ERR) {
@@ -270,7 +270,7 @@ bool parse(const char*s) {
             }
             state = rule.state;
            
-            printf("%d %c %d\n",lexem, *end, state);
+            //printf("%d %c %d\n",lexem, *end, state);
             s = end;
             previous_lexem = lexem;
         }
@@ -296,6 +296,7 @@ bool parse(const char*s) {
                     ++parts;
                 }
                 end += 1;
+                free(check_bound);
                 s = end;
             }
             if (parts >= 1){
@@ -304,6 +305,13 @@ bool parse(const char*s) {
                  printf("%ld", parts);
             }
         }
+
+    
     }
+
+    for (size_t i = 0; i < 3; ++i){
+        free(str[i]);
+    }
+    free(str);
     return true;
 }
