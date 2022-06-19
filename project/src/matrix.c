@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "/home/dasha/Desktop/Homework/Homework/project/include/matrix.h"
 #include <stdio.h>
 #include <stdlib.h>
 
